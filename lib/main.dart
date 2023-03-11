@@ -64,7 +64,8 @@ class _pagefState extends State<pagef> {
             ),
             const Expanded(
                 child: Divider(color: Color.fromARGB(255, 136, 194, 242),
-                thickness:2.0 ,))
+                thickness:2.0 ,)
+                )
           ],
         ),
       ),
