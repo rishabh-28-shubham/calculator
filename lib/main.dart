@@ -35,7 +35,7 @@ class pagef extends StatefulWidget {
 
 // //this widget is used to create buttons so that i have not to create those ones again and again
 
-// Widget bulidButton(String buttonText){
+// Widget buildButton(String buttonText){
 //   return  Expanded(
 //     child:SizedBox(
 //       height: 70.0,
@@ -84,6 +84,7 @@ buttonPressed(buttonText){
       }
     }
     else if(buttonText == "="){
+      num2 = double.parse(output);
       if(operand == '+'){
         output2 = (num1+num2).toString();
       }
@@ -103,18 +104,24 @@ buttonPressed(buttonText){
     else{
       output2 += buttonText;
     }
+    print(output2);
+    setState(() {
+      output = double.parse(output2).toStringAsFixed(2);
+      print(output);
+    });
 }
+
 
 //this widget is used to create buttons so that i have not to create those ones again and again
 
-Widget bulidButton(String buttonText){
+Widget buildButton(String buttonText){
   return  Expanded(
     child:SizedBox(
       height: 70.0,
       child: Padding(padding: 
       const EdgeInsets.all(2.0),
       child: OutlinedButton(
-        onPressed: () => buttonPressed() , 
+        onPressed: () => buttonPressed(buttonText), 
         child: Text(buttonText ,style: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
@@ -150,40 +157,40 @@ Widget bulidButton(String buttonText){
                   children: [
                     Row(
                       children: [
-                        bulidButton('7'),
-                        bulidButton('8'),
-                        bulidButton('9'),
-                        bulidButton('/'),
+                        buildButton('7'),
+                        buildButton('8'),
+                        buildButton('9'),
+                        buildButton('/'),
                       ],
                     ),
                     Row(
                       children: [
-                        bulidButton('4'),
-                        bulidButton('5'),
-                        bulidButton('6'),
-                        bulidButton('X'),
+                        buildButton('4'),
+                        buildButton('5'),
+                        buildButton('6'),
+                        buildButton('X'),
                       ],
                     ),
                     Row(
                       children: [
-                        bulidButton('1'),
-                        bulidButton('2'),
-                        bulidButton('3'),
-                        bulidButton('-'),
+                        buildButton('1'),
+                        buildButton('2'),
+                        buildButton('3'),
+                        buildButton('-'),
                       ],
                     ),
                     Row(
                       children: [
-                        bulidButton('.'),
-                        bulidButton('0'),
-                        bulidButton('00'),
-                        bulidButton('+'),
+                        buildButton('.'),
+                        buildButton('0'),
+                        buildButton('00'),
+                        buildButton('+'),
                       ],
                     ),
                     Row(
                       children: [
-                        bulidButton('Clear'),
-                        bulidButton('='),
+                        buildButton('Clear'),
+                        buildButton('='),
                       ],
                     )
                   ],
