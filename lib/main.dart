@@ -106,7 +106,7 @@ buttonPressed(buttonText){
     }
     print(output2);
     setState(() {
-      output = double.parse(output2).toStringAsFixed(2);
+      output =double.parse(output2).toStringAsFixed(0);
       print(output);
     });
 }
