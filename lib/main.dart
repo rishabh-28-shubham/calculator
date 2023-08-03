@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
 
-void main() => runApp(Myapp());
+void main() => runApp(const Myapp());
 
 class Myapp extends StatelessWidget {
   const Myapp({Key? key}) : super(key: key);
@@ -134,7 +133,7 @@ Widget buildButton(String buttonText){
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: new Text(widget.title),
+        title: Text(widget.title),
       ),
 
       body:Container(
